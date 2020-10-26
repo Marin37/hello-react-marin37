@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './Note';
 
-const NotesList = ({ notes, deleteNote, updateNote}) => {
+const NotesList = ({ notes, removeNote, updateNote}) => {
 
   return (
     <div className="card-columns">
@@ -11,7 +11,7 @@ const NotesList = ({ notes, deleteNote, updateNote}) => {
           key={note._id}
           initialTitle={note.title}
           initialText={note.text}
-          deleteNote={deleteNote}
+          removeNote={removeNote}
           updateNote={updateNote}
         />
       ))}

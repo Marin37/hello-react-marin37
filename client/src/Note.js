@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Note = ({ id, initialTitle, initialText, deleteNote, updateNote }) => {
+const Note = ({ id, initialTitle, initialText, removeNote, updateNote }) => {
   
   // Estados del titulo y texto
   const [title, setTitle] = useState(initialTitle);
@@ -57,7 +57,7 @@ const Note = ({ id, initialTitle, initialText, deleteNote, updateNote }) => {
           <i className="text-secondary fa fa-save fa-lg"></i>
         </button>
 
-        <button className="btn" onClick={() => deleteNote(id)}>
+        <button className="btn" onClick={() => removeNote(id)}>
           <i className="text-danger fa fa-trash fa-lg"></i>
         </button>
 

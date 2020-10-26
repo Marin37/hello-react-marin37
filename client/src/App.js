@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 const App = () => {
 
-  //     preparar notas    Val inic = [Ø]
+  //    estado notas    Val inic = [Ø]
   const [notes, setNotes] = useState([]);
 
   // Fetch notas con el hook useEffect
@@ -43,9 +43,9 @@ const App = () => {
       });
   };
 
-  // Delete nota
-  const deleteNote = (id) => {
-    axios.delete(`/api/notes/${id}`)
+  // Borrar nota
+  const removeNote = (id) => {
+    axios.remove(`/api/notes/${id}`)
       .then(res => {
         const newNotes = notes.filter(note => note._id !== id);
         setNotes(newNotes);
@@ -62,7 +62,7 @@ const App = () => {
         <hr />
         <NotesList
           notes={notes}
-          deleteNote={deleteNote}
+          removeNote={removeNote}
           updateNote={updateNote}
         />
       </div>
