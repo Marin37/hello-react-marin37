@@ -29,25 +29,25 @@ const App = () => {
   };
 
   // Update nota
-  const updateNote = (id, title, text) => {
+  const updateNote = (_id, title, text) => {
     const updatedNote = {
       title: title,
       text: text
     };
-    axios.put(`/api/notes/${id}`, updatedNote)
+    axios.put(`/api/notes/${_id}`, updatedNote)
       .then(res => {
         const newNotes = notes.map(note =>
-          note.id === id ? updatedNote : note
+          note._id === _id ? updatedNote : note
         );
         setNotes(newNotes);
       });
   };
 
   // Borrar nota
-  const removeNote = (id) => {
-    axios.remove(`/api/notes/${id}`)
+  const removeNote = (_id) => {
+        axios.delete(`/api/notes/${_id}`)
       .then(res => {
-        const newNotes = notes.filter(note => note._id !== id);
+        const newNotes = notes.filter(note => note._id !== _id);
         setNotes(newNotes);
       });
   };

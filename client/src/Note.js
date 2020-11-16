@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Note = ({ id, initialTitle, initialText, removeNote, updateNote }) => {
+const Note = ({ _id, initialTitle, initialText, removeNote, updateNote }) => {
   
   // Estados del titulo y texto
   const [title, setTitle] = useState(initialTitle);
@@ -11,7 +11,7 @@ const Note = ({ id, initialTitle, initialText, removeNote, updateNote }) => {
 
   // HANDLERS que hacer con las notas
   const handleSave = () => {
-    updateNote(id, title, text);
+    updateNote(_id, title, text);
     setEditable(!editable);
   };
 
@@ -57,7 +57,7 @@ const Note = ({ id, initialTitle, initialText, removeNote, updateNote }) => {
           <i className="text-secondary fa fa-save fa-lg"></i>
         </button>
 
-        <button className="btn" onClick={() => removeNote(id)}>
+        <button className="btn" onClick={() => removeNote(_id)}>
           <i className="text-danger fa fa-trash fa-lg"></i>
         </button>
 

@@ -14,7 +14,7 @@ router.get('/notes', (req, res, next) => {
             if (req.hostname != 'localhost')
             {
                 notes = notes.map(note => ({
-                    id: note._id,
+                    _id: note._id,
                     title: note.title,
                     text: note.text,
                     details: {

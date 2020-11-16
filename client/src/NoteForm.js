@@ -23,7 +23,7 @@ const NoteForm = ({ addNote }) => {
       <div className="form-group">
         <label htmlFor="title">Título</label>
         <input
-          id="title"
+          _id="title"
           className="form-control"
           type='text'
           value={title}
@@ -33,7 +33,7 @@ const NoteForm = ({ addNote }) => {
       <div className="form-group">
         <label htmlFor="text">Texto</label>
         <textarea
-          id="text"
+          _id="text"
           className="form-control"
           value={text}
           rows="4"
